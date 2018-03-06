@@ -54,7 +54,8 @@ abbr        for (:) {}
 # lambda expression ( C++11 feature )
 snippet     lambda
 abbr        [](){}
-    [${1}](${2})${3}{ ${4:TARGET} }${0:;}
+alias       auto
+    auto ${1:func_name} = [&](auto ${2:param_name}){${3:TARGET}};${0}
 
 # scoped enumeration ( C++11 feature )
 snippet     enum_scoped
@@ -89,7 +90,7 @@ abbr        const_cast<>()
 
 snippet     dynamic_cast
 abbr        dynamic_cast<>()
-    dynamic_cast<${1}>(${2})${0}
+    std::dynamic_cast<${1}>(${2})${0}
 
 snippet     helloworld
 abbr        #include<iostream> int main...
@@ -102,5 +103,6 @@ abbr        #include<iostream> int main...
     }
 
 snippet     p
+alias       cout
 options     head
-  std::cout << ${0:TARGET} << std::endl;
+  std::cout << ${0:TARGET} << std::endl;${0}
