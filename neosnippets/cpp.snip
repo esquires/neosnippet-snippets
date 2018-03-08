@@ -31,6 +31,7 @@ snippet     class-without-constructor
 options     head
 abbr        class {}
     class ${1:#:name} {
+     public: 
         ${2}
     };
 
@@ -55,7 +56,7 @@ abbr        for (:) {}
 snippet     lambda
 abbr        [](){}
 alias       auto
-    auto ${1:func_name} = [&](auto ${2:param_name}){${3:TARGET}};${0}
+    auto ${1:func_name} = [&](auto ${2:param_name}){return ${3:TARGET}};${0}
 
 # scoped enumeration ( C++11 feature )
 snippet     enum_scoped
