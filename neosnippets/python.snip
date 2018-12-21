@@ -81,11 +81,11 @@ snippet     ifmain
 abbr        if __name__ == '__main__': ...
 alias       main
 options     head
-    def ${1:name}:
+    def main():
         ${0}
         
 	if __name__ == '__main__':
-		$1
+		main()
 
 snippet     tryexcept
 abbr        try: ... except ...: ...

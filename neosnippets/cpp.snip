@@ -13,9 +13,9 @@ alias   #inc2, #include2
 
 snippet     template
 abbr        template <T>
-    template<typename ${1:T}> ${0}
+    template<class ${1:T}>
 
-snippet     class
+snippet     class-with-constructor
 options     head
 abbr        class {}
     class ${1:#:name} {
@@ -27,7 +27,7 @@ abbr        class {}
         ${0:TARGET}
     }
 
-snippet     class-without-constructor
+snippet     class
 options     head
 abbr        class {}
     class ${1:#:name} {
@@ -57,6 +57,14 @@ snippet     lambda
 abbr        [](){}
 alias       auto
     auto ${1:func_name} = [&](auto ${2:param_name}){return ${3:TARGET}};
+
+# lambda expression ( C++11 feature )
+snippet     lambda-multi-line
+abbr        [](){}
+alias       auto
+    auto ${1:func_name} = [&](auto ${2:param_name}) {
+        return ${3:TARGET}
+    };
 
 # scoped enumeration ( C++11 feature )
 snippet     enum_scoped
