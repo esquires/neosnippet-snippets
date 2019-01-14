@@ -115,3 +115,13 @@ snippet     p
 alias       cout
 options     head
   std::cout << ${0:TARGET} << std::endl;
+
+snippet     cout_val
+alias       cout_val
+options     head
+  std::cout << "${1} = " << $1 << std::endl;
+
+snippet     cout_eig
+alias       cout_eig
+options     head
+  std::cout << Eigen::Map<Eigen::VectorXd>(${1}.data(), $1.size()) << std::endl;
