@@ -111,7 +111,7 @@ abbr        #include<iostream> int main...
         return 0;
     }
 
-snippet     p
+snippet     cout
 alias       cout
 options     head
   std::cout << ${0:TARGET} << std::endl;
@@ -124,4 +124,4 @@ options     head
 snippet     cout_eig
 alias       cout_eig
 options     head
-  std::cout << Eigen::Map<Eigen::VectorXd>(${1}.data(), $1.size()) << std::endl;
+  std::cout << Eigen::Map<const Eigen::VectorXd>(${1}.data(), $1.size()).transpose() << std::endl;

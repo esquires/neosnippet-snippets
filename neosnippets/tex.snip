@@ -558,3 +558,15 @@ alias   \ref
 snippet label
 alias   \label
     \label{${1}}${0}
+
+snippet IEEEeqnarray
+alias \IEEEeqnarray
+    \begin{IEEEeqnarray}{${1:#:rCl}}
+    ${0}
+    \end{IEEEeqnarray}
+
+snippet IEEEeqnarray*
+alias \IEEEeqnarray*
+    \begin{IEEEeqnarray*}{${1:#:rCl}}
+    ${0}
+    \end{IEEEeqnarray*}
